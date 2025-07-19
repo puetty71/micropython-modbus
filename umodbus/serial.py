@@ -284,7 +284,7 @@ class Serial(CommonModbusFunctions):
                 time.ticks_diff(send_finish_time, send_start_time) +
                 100     # only required at baudrates above 57600, but hey 100us
             )
-            time.sleep_us(sleep_time_us)
+            time.sleep_us(sleep_time_us -1100)
 
         if self._ctrlPin:
             self._ctrlPin.off()
